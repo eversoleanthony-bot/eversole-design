@@ -3,3 +3,13 @@
 .gitignore
 .DS_Store
 wrangler.toml
+
+# Under-construction gate: the real site below is built but not
+# linked up yet (about/privacy/terms/category/case-study pages still
+# pending). Remove these lines when ready to launch for real.
+home.html
+contact.html
+styles.css
+main.js
+images
+fonts
