@@ -9,6 +9,7 @@ wrangler.toml
 # pending). Remove these lines when ready to launch for real.
 home.html
 contact.html
+about.html
 styles.css
 main.js
 images

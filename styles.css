@@ -125,6 +125,53 @@ a{ color: inherit; }
 .contact-list a{ font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 1.1rem; text-decoration: none; }
 .contact-list a:hover{ color: var(--gold); }
 
+/* About page */
+.about-hero{
+  display: grid; grid-template-columns: 18rem 1fr; gap: 3rem;
+  padding: 3.4rem 2.5rem 3rem; align-items: start;
+}
+.about-hero .portrait img{ width: 100%; aspect-ratio: 1/1; object-fit: cover; border: 1px solid var(--line-strong); }
+.about-hero .bio .eyebrow{ font-family: 'Plex Mono', ui-monospace, monospace; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: block; }
+.about-hero .bio h1{ font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(1.9rem, 4vw, 2.7rem); margin: 0 0 1.3rem; letter-spacing: -.01em; text-wrap: balance; }
+.about-hero .bio p{ font-size: 1rem; line-height: 1.65; color: var(--text-mid); margin: 0 0 1.1rem; max-width: 62ch; }
+.about-hero .bio p.close{ color: var(--paper); font-weight: 600; }
+.about-hero .cta-btn{
+  display: inline-block; margin-top: .8rem; padding: .85rem 1.6rem;
+  background: var(--gold); color: var(--ink); text-decoration: none;
+  font-family: 'Plex Mono', ui-monospace, monospace; font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; font-weight: 500;
+}
+.about-hero .cta-btn:hover{ background: var(--paper); }
+
+.services{ background: #100d0a; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.services h2{ font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(1.6rem, 3.4vw, 2.2rem); margin: 0; padding: 2.6rem 2.5rem 0; }
+.service-row{ padding: 1.6rem 2.5rem; border-top: 1px solid var(--line); display: grid; grid-template-columns: 3rem 1fr; gap: 1.2rem; }
+.service-row:last-of-type{ border-bottom: 1px solid var(--line); }
+.service-row .n{ font-family: 'Plex Mono', ui-monospace, monospace; font-size: .8rem; color: var(--text-dim); padding-top: .2rem; }
+.service-row h3{ font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 1.25rem; margin: 0 0 .3rem; }
+.service-row .sub{ font-family: 'Plex Mono', ui-monospace, monospace; font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; color: var(--gold); margin-bottom: .6rem; display: block; }
+.service-row p{ font-size: .92rem; line-height: 1.6; color: var(--text-mid); margin: 0; max-width: 62ch; }
+
+.tools{ padding: 2.6rem 2.5rem; text-align: center; }
+.tools .label{ font-family: 'Plex Mono', ui-monospace, monospace; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 1.2rem; }
+.tools .list{ display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 1rem; color: var(--text-mid); }
+.tools .list span:not(:last-child)::after{ content: '\00b7'; margin: 0 .8rem; color: var(--text-dim); }
+
+.credentials{ border-top: 1px solid var(--line); padding: 2.6rem 2.5rem 1rem; }
+.credentials h2{ font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(1.4rem, 3vw, 1.8rem); margin: 0 0 1.4rem; }
+.credentials ul{ list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.credentials li{ padding: .9rem 0; border-bottom: 1px solid var(--line); font-size: .92rem; color: var(--text-mid); display: flex; gap: .8rem; }
+.credentials li::before{ content: '\2013'; color: var(--gold); }
+.credentials .note{ font-size: .8rem; color: var(--text-dim); margin: 1.2rem 0 1.6rem; max-width: 60ch; }
+
+.testimonial{ border-top: 1px solid var(--line); background: #100d0a; padding: 3rem 2.5rem; }
+.testimonial blockquote{ margin: 0 0 1.2rem; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 500; font-size: clamp(1.15rem, 2.4vw, 1.5rem); line-height: 1.5; color: var(--paper); max-width: 54ch; }
+.testimonial blockquote::before{ content: '\201C'; color: var(--gold); }
+.testimonial blockquote::after{ content: '\201D'; color: var(--gold); }
+.testimonial cite{ font-style: normal; font-family: 'Plex Mono', ui-monospace, monospace; font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; color: var(--text-dim); }
+
+.about-cta{ padding: 3rem 2.5rem; text-align: center; border-top: 1px solid var(--line); }
+.about-cta h2{ font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(1.6rem, 3.6vw, 2.2rem); margin: 0 0 1.4rem; }
+
 @media (prefers-reduced-motion: reduce){
   .cat-row, .cat-reel-wrap, .cat-row .arrow, .hover-preview{ transition: none; }
 }
@@ -141,4 +188,14 @@ a{ color: inherit; }
   .site-footer, .footer-legal{ padding-left: 1.4rem; padding-right: 1.4rem; }
   .page-main{ padding: 2.6rem 1.4rem 3rem; }
   .hover-preview{ display: none; }
+
+  .about-hero{ grid-template-columns: 1fr; padding: 2.6rem 1.4rem 2rem; gap: 1.6rem; }
+  .about-hero .portrait{ max-width: 10rem; }
+  .services h2{ padding: 2rem 1.4rem 0; }
+  .service-row{ padding: 1.3rem 1.4rem; grid-template-columns: 1fr; gap: .3rem; }
+  .service-row .n{ display: none; }
+  .tools{ padding: 2rem 1.4rem; }
+  .credentials{ padding: 2rem 1.4rem 1rem; }
+  .testimonial{ padding: 2.2rem 1.4rem; }
+  .about-cta{ padding: 2.2rem 1.4rem; }
 }
