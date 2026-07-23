@@ -8,7 +8,8 @@
 :root{
   --ink: #181410;
   --paper: #efe9dd;
-  --gold: #d99a3a;
+  --oxblood: #984b43;
+  --gold: #eac67a;
   --line: rgba(239,233,221,.16);
   --line-strong: rgba(239,233,221,.3);
   --text-dim: rgba(239,233,221,.55);
@@ -34,12 +35,13 @@ a{ color: inherit; }
 /* Nav */
 .site-nav{
   display: flex; justify-content: space-between; align-items: center;
-  padding: 1.4rem 2.5rem;
+  padding: 1rem 2.5rem;
   font-size: .8rem; text-transform: uppercase; letter-spacing: .06em;
   border-bottom: 1px solid var(--line);
-  flex-wrap: wrap; gap: .8rem;
+  flex-wrap: wrap; gap: 1.2rem;
 }
-.site-nav .wordmark{ text-decoration: none; font-weight: 600; }
+.site-nav .wordmark{ display: flex; align-items: center; gap: 1rem; text-decoration: none; font-weight: 600; }
+.site-nav .wordmark img{ width: 5.6rem; height: auto; }
 .site-nav .links{ display: flex; gap: 1.6rem; color: var(--text-mid); }
 .site-nav .links a{ text-decoration: none; }
 .site-nav .links a:hover{ color: var(--gold); }
@@ -62,6 +64,7 @@ a{ color: inherit; }
   transition: padding-left .25s ease, color .25s ease;
 }
 .cat-row:hover, .cat-block.open .cat-row{ padding-left: 3.2rem; color: var(--gold); }
+.cat-block.open .cat-row{ border-left: 3px solid var(--oxblood); }
 .cat-row .n{ font-family: 'Plex Mono', ui-monospace, monospace; font-size: .8rem; color: var(--text-dim); }
 .cat-row .t{ font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 1.7rem; flex: 1; }
 .cat-row .c{ font-family: 'Plex Mono', ui-monospace, monospace; font-size: .72rem; text-transform: uppercase; color: var(--text-dim); }
@@ -96,6 +99,9 @@ a{ color: inherit; }
 }
 .hover-preview.show{ opacity: 1; transform: translate(-50%, -50%) scale(1); }
 .hover-preview img{ width: 100%; height: 100%; object-fit: cover; }
+
+.signature{ position: relative; padding: 4.5rem 2.5rem; overflow: hidden; border-top: 1px solid var(--line); display: flex; justify-content: center; }
+.signature img{ width: 22rem; opacity: .14; }
 
 /* Footer */
 .site-footer{
@@ -135,12 +141,12 @@ a{ color: inherit; }
 .about-hero .bio h1{ font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(1.9rem, 4vw, 2.7rem); margin: 0 0 1.3rem; letter-spacing: -.01em; text-wrap: balance; }
 .about-hero .bio p{ font-size: 1rem; line-height: 1.65; color: var(--text-mid); margin: 0 0 1.1rem; max-width: 62ch; }
 .about-hero .bio p.close{ color: var(--paper); font-weight: 600; }
-.about-hero .cta-btn{
+.cta-btn{
   display: inline-block; margin-top: .8rem; padding: .85rem 1.6rem;
-  background: var(--gold); color: var(--ink); text-decoration: none;
+  background: var(--oxblood); color: var(--paper); text-decoration: none;
   font-family: 'Plex Mono', ui-monospace, monospace; font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; font-weight: 500;
 }
-.about-hero .cta-btn:hover{ background: var(--paper); }
+.cta-btn:hover{ background: var(--paper); color: var(--oxblood); }
 
 .services{ background: #100d0a; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .services h2{ font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(1.6rem, 3.4vw, 2.2rem); margin: 0; padding: 2.6rem 2.5rem 0; }
@@ -177,7 +183,9 @@ a{ color: inherit; }
 }
 
 @media (max-width: 720px){
-  .site-nav{ padding: 1.2rem 1.4rem; }
+  .site-nav{ padding: 1rem 1.4rem; }
+  .site-nav .wordmark img{ width: 3.4rem; }
+  .site-nav .wordmark span{ display: none; }
   .intro{ padding: 2.6rem 1.4rem 1.4rem; }
   .cat-row{ padding: 1.3rem 1.4rem; }
   .cat-row:hover, .cat-block.open .cat-row{ padding-left: 2.2rem; }
@@ -188,6 +196,8 @@ a{ color: inherit; }
   .site-footer, .footer-legal{ padding-left: 1.4rem; padding-right: 1.4rem; }
   .page-main{ padding: 2.6rem 1.4rem 3rem; }
   .hover-preview{ display: none; }
+  .signature{ padding: 3rem 1.4rem; }
+  .signature img{ width: 16rem; }
 
   .about-hero{ grid-template-columns: 1fr; padding: 2.6rem 1.4rem 2rem; gap: 1.6rem; }
   .about-hero .portrait{ max-width: 10rem; }
