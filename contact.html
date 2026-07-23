@@ -36,6 +36,82 @@
       <a href="https://linkedin.com/in/anthonyeversole/">Anthony Eversole</a>
     </li>
   </ul>
+
+  <div class="contact-form">
+    <h2>Or send a message directly</h2>
+    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="d4917e94-8d7d-49cb-95cf-f3fbdbad6199" />
+      <input type="hidden" name="subject" value="New inquiry from eversole.design" />
+      <input type="hidden" name="redirect" value="false" />
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="first_name">First name</label>
+          <input type="text" id="first_name" name="first_name" placeholder="First" autocomplete="given-name" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="last_name">Last name</label>
+          <input type="text" id="last_name" name="last_name" placeholder="Last" autocomplete="family-name" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="phone">Phone <span class="form-label-opt">(optional)</span></label>
+          <input type="tel" id="phone" name="phone" placeholder="(801) 000-0000" autocomplete="tel" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">What are you interested in?</label>
+        <div class="form-checks">
+          <label class="form-check"><input type="checkbox" name="services[]" value="Graphic Design" /> Graphic Design</label>
+          <label class="form-check"><input type="checkbox" name="services[]" value="Large Format &amp; Environmental Design" /> Large Format &amp; Environmental</label>
+          <label class="form-check"><input type="checkbox" name="services[]" value="Brand Identity &amp; Strategy" /> Brand Identity &amp; Strategy</label>
+          <label class="form-check"><input type="checkbox" name="services[]" value="Motion Design &amp; Animation" /> Motion Design &amp; Animation</label>
+          <label class="form-check"><input type="checkbox" name="services[]" value="Custom Lettering &amp; Typography" /> Custom Lettering &amp; Typography</label>
+          <label class="form-check"><input type="checkbox" name="services[]" value="Illustration" /> Illustration</label>
+          <label class="form-check"><input type="checkbox" name="services[]" value="Packaging Design" /> Packaging Design</label>
+          <label class="form-check"><input type="checkbox" name="services[]" value="Other" /> Other</label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="budget">What's your budget?</label>
+          <input type="text" id="budget" name="budget" placeholder="Rough range is fine" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="referral">How did you hear about this?</label>
+          <select id="referral" name="referral">
+            <option value="" disabled selected>Select one</option>
+            <option value="Instagram">Instagram</option>
+            <option value="LinkedIn">LinkedIn</option>
+            <option value="Referral">Referral from someone</option>
+            <option value="In The Event">In The Event</option>
+            <option value="Search">Search engine</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="message">Tell me about your project</label>
+        <textarea id="message" name="message" placeholder="What you need, timeline, anything that helps me understand the project." required></textarea>
+      </div>
+
+      <div class="form-submit">
+        <button type="submit" class="cta-btn">Send message</button>
+        <span class="form-note">I'll be in touch within 48 hours.</span>
+      </div>
+
+      <div class="form-success" id="form-success">Message sent, thank you. I'll be in touch within 48 hours.</div>
+    </form>
+  </div>
 </main>
 
 <footer class="site-footer">
@@ -50,6 +126,38 @@
     <a href="https://instagram.com/eversole_design">Instagram</a>
   </div>
 </div>
+
+<script>
+(function () {
+  var form = document.getElementById('contact-form');
+  var success = document.getElementById('form-success');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = form.querySelector('.cta-btn');
+    var originalText = btn.textContent;
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: new FormData(form)
+    }).then(function (r) { return r.json(); }).then(function (data) {
+      if (data.success) {
+        form.reset();
+        success.style.display = 'block';
+        btn.textContent = 'Sent';
+      } else {
+        btn.textContent = originalText;
+        btn.disabled = false;
+        alert('Something went wrong. Please try again or email directly.');
+      }
+    }).catch(function () {
+      btn.textContent = originalText;
+      btn.disabled = false;
+      alert('Something went wrong. Please try again or email directly.');
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
