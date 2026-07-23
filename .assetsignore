@@ -10,6 +10,8 @@ wrangler.toml
 home.html
 contact.html
 about.html
+privacy.html
+terms.html
 styles.css
 main.js
 images
