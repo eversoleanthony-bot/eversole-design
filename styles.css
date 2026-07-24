@@ -103,6 +103,17 @@ a{ color: inherit; }
 .signature{ position: relative; padding: 4.5rem 2.5rem; overflow: hidden; border-top: 1px solid var(--line); display: flex; justify-content: center; }
 .signature img{ width: 22rem; opacity: .14; }
 
+/* Category pages */
+.category-hero{ padding: 3.4rem 2.5rem 2rem; border-bottom: 1px solid var(--line); }
+.category-hero .eyebrow{ font-family: 'Plex Mono', ui-monospace, monospace; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 1rem; }
+.category-hero h1{ font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(2rem, 4.6vw, 3.1rem); margin: 0; letter-spacing: -.01em; text-wrap: balance; }
+.project-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem 1.5rem; padding: 2.6rem 2.5rem 4rem; }
+.project-card{ text-decoration: none; color: inherit; display: block; }
+.project-card .img{ width: 100%; aspect-ratio: 4/3; object-fit: cover; border: 1px solid var(--line-strong); }
+.project-card:hover .img{ border-color: var(--gold); }
+.project-card h3{ font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 1.05rem; margin: .8rem 0 0; }
+.project-card:hover h3{ color: var(--gold); }
+
 /* Footer */
 .site-footer{
   padding: 2.4rem 2.5rem 1.4rem;
@@ -223,6 +234,8 @@ a{ color: inherit; }
   .signature{ padding: 3rem 1.4rem; }
   .signature img{ width: 16rem; }
   .form-row{ grid-template-columns: 1fr; }
+  .category-hero{ padding: 2.6rem 1.4rem 1.6rem; }
+  .project-grid{ grid-template-columns: 1fr; padding: 2rem 1.4rem 3rem; gap: 2rem; }
 
   .about-hero{ grid-template-columns: 1fr; padding: 2.6rem 1.4rem 2rem; gap: 1.6rem; }
   .about-hero .portrait{ max-width: 10rem; }
