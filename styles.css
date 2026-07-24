@@ -114,6 +114,17 @@ a{ color: inherit; }
 .project-card h3{ font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 1.05rem; margin: .8rem 0 0; }
 .project-card:hover h3{ color: var(--gold); }
 
+/* Case study pages */
+.case-back{ display: block; padding: 1.2rem 2.5rem 0; font-family: 'Plex Mono', ui-monospace, monospace; font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: var(--text-dim); text-decoration: none; }
+.case-back:hover{ color: var(--gold); }
+.case-hero-img{ width: 100%; max-height: 34rem; object-fit: cover; display: block; margin-top: 1.6rem; }
+.case-head{ padding: 2.2rem 2.5rem 1.6rem; max-width: 48rem; }
+.case-head .eyebrow{ font-family: 'Plex Mono', ui-monospace, monospace; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 1rem; }
+.case-head h1{ font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(1.9rem, 4vw, 2.6rem); margin: 0 0 1.1rem; letter-spacing: -.01em; text-wrap: balance; }
+.case-head p{ font-size: 1.02rem; line-height: 1.65; color: var(--text-mid); margin: 0; max-width: 60ch; }
+.case-gallery{ display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; padding: .5rem 2.5rem 4rem; }
+.case-gallery img{ width: 100%; aspect-ratio: 4/3; object-fit: cover; border: 1px solid var(--line-strong); }
+
 /* Footer */
 .site-footer{
   padding: 2.4rem 2.5rem 1.4rem;
@@ -236,6 +247,9 @@ a{ color: inherit; }
   .form-row{ grid-template-columns: 1fr; }
   .category-hero{ padding: 2.6rem 1.4rem 1.6rem; }
   .project-grid{ grid-template-columns: 1fr; padding: 2rem 1.4rem 3rem; gap: 2rem; }
+  .case-back{ padding: 1rem 1.4rem 0; }
+  .case-head{ padding: 1.8rem 1.4rem 1.2rem; }
+  .case-gallery{ grid-template-columns: 1fr; padding: .5rem 1.4rem 3rem; }
 
   .about-hero{ grid-template-columns: 1fr; padding: 2.6rem 1.4rem 2rem; gap: 1.6rem; }
   .about-hero .portrait{ max-width: 10rem; }
